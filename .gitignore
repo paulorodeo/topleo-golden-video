@@ -1,0 +1,27 @@
+# Input videos
+input/*
+!input/.gitkeep
+
+# Output videos
+output/*
+!output/.gitkeep
+
+# Logs
+logs/*
+!logs/.gitkeep
+
+# Temporary
+tmp/*
+!tmp/.gitkeep
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Linux
+*~
+
+# macOS
+.DS_Store
