@@ -1,8 +1,52 @@
+──────────────────────────────────────────────
+
+TopLeo Golden Video
+
+Professional Video Normalization Toolkit
+
+Encode Once. Use Everywhere.
+
+──────────────────────────────────────────────
+
+
+
 # TopLeo Golden Video
 
-TopLeo Golden Video is an open and reproducible video normalization toolkit designed to standardize media libraries before distribution.
+Professional Video Normalization Toolkit
 
-The project provides a deterministic workflow for converting videos into a single technical profile suitable for:
+TopLeo Golden Video is an open-source toolkit for deterministic video normalization.
+
+It transforms heterogeneous video collections into a single, reproducible, broadcast-ready technical standard suitable for IPTV, streaming platforms, media servers and long-term digital archives.
+
+---
+
+## Why normalize videos?
+
+Large media collections usually contain different:
+
+- Containers
+- Video codecs
+- Audio codecs
+- Frame rates
+- Resolutions
+- Bitrates
+- Metadata
+
+These inconsistencies often cause:
+
+- Playback incompatibilities
+- Unnecessary transcoding
+- Higher CPU usage
+- Poor streaming performance
+- Difficult media maintenance
+
+TopLeo Golden Video solves this by converting every source into a single official technical standard before distribution.
+
+---
+
+## Target Platforms
+
+Videos encoded with the Golden Profile are optimized for:
 
 - IPTV
 - HLS Streaming
@@ -15,57 +59,124 @@ The project provides a deterministic workflow for converting videos into a singl
 
 ---
 
-## Goals
+## Workflow
 
-- Standardize every video before publishing.
-- Eliminate codec incompatibilities.
-- Produce reproducible video files.
-- Maintain a single official encoding profile.
-- Automate large video collections.
+```text
+Source Videos
+      │
+      ▼
+Download (yt-dlp)
+      │
+      ▼
+Rename & Normalize
+      │
+      ▼
+TopLeo Golden Video
+      │
+      ▼
+Verification
+      │
+      ▼
+Media Library
+      │
+      ▼
+FFmpeg
+      │
+      ▼
+HLS / IPTV / Broadcast
+```
 
 ---
 
-## Workflow
+## Official Golden Video Profile
 
-YouTube / Local Videos
+The project ships with an official encoding profile designed for maximum compatibility and long-term maintainability.
 
-↓
+| Setting | Value |
+|---------|-------|
+| Container | MP4 |
+| Video Codec | H.264 High |
+| Resolution | 1920 × 1080 |
+| Frame Rate | 30 fps (Constant) |
+| Pixel Format | yuv420p |
+| Quality | RF 20 |
+| Encoder Preset | Slow |
+| Audio Codec | AAC LC |
+| Audio Bitrate | 192 kbps |
+| Sample Rate | 48 kHz |
+| Channels | Stereo |
+| Fast Start | Enabled |
 
-yt-dlp
+Official profile:
 
-↓
+```text
+profiles/handbrake/TopLeo-Golden-Video-v1.0.json
+```
 
-Rename & Normalize
+For complete technical specifications, see:
 
-↓
+```text
+docs/GOLDEN_VIDEO_PROFILE.md
+```
 
-TopLeo Golden Video
+---
 
-↓
+## Custom Profiles
 
-FFmpeg
+The included profile is the official recommendation, but it is fully customizable.
 
-↓
+You can edit or replace the JSON profile before starting a batch conversion.
 
-HLS / IPTV / Broadcast
+Future versions will include native profiles for:
+
+- FFmpeg
+- HEVC (H.265)
+- AV1
+- Broadcast workflows
+- Archive profiles
+
+---
+
+## Features
+
+- Deterministic video normalization
+- Official Golden Video Profile
+- HandBrake encoding preset
+- Batch conversion
+- Documentation First workflow
+- Reproducible encoding
+- Broadcast-ready output
+- Future FFmpeg support
+
+---
+
+## Design Principles
+
+TopLeo Golden Video follows a few simple principles:
+
+- Documentation First
+- Deterministic Results
+- Open Standards
+- Reproducible Workflows
+- Broadcast Compatibility
+- Long-Term Maintainability
+- Automation First
 
 ---
 
 ## Project Structure
 
-profiles/
-
-scripts/
-
+```text
 docs/
-
+profiles/
+scripts/
 input/
-
 output/
-
 logs/
-
 tmp/
+samples/
+examples/
+```
 
 ---
 
@@ -73,20 +184,43 @@ tmp/
 
 Current Version
 
-v1.0 (Development)
+**v0.1.0-alpha**
 
----
+Current implementation:
 
-## Repository
-
-This repository contains:
-
-- Official HandBrake Profile
-- Encoding Scripts
+- Project architecture
 - Documentation
-- Architecture
-- Future FFmpeg Profiles
+- Official HandBrake Profile
+- Initial encoding scripts
+
+Next milestones:
+
+- FFprobe validation
+- Batch processing
+- Encoding reports
+- Native FFmpeg profile
+- Production release
 
 ---
 
-Copyright © TopLeo
+## Documentation
+
+Additional documentation is available in:
+
+- PROJECT.md
+- VISION.md
+- ROADMAP.md
+- CHANGELOG.md
+- docs/PROJECT_ARCHITECTURE.md
+- docs/DIRECTORY_STRUCTURE.md
+- docs/GOLDEN_VIDEO_PROFILE.md
+
+---
+
+## License
+
+MIT License
+
+---
+
+Copyright © 2026 TopLeo
