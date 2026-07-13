@@ -39,5 +39,42 @@ echo
 
 find "$SOURCE" -maxdepth 1 -type f -iname "*.mp4" | sort
 
+encode_video() {
+
+    local INPUT_FILE="$1"
+
+    local OUTPUT_FILE="$2"
+
+    echo
+    echo "=========================================="
+    echo "Encoding:"
+    echo "$(basename "$INPUT_FILE")"
+    echo "------------------------------------------"
+
+    HandBrakeCLI \
+        --preset-import-file "$PROFILE" \
+        --preset "TopLeo Golden Video v1.0" \
+        -i "$INPUT_FILE" \
+        -o "$OUTPUT_FILE"
+
+}
+
 echo
-echo "Pronto."
+echo "Iniciando conversão..."
+echo
+
+for INPUT_FILE in "$SOURCE"/*.mp4
+do
+
+    [ -f "$INPUT_FILE" ] || continue
+
+    OUTPUT_FILE="$DEST/$(basename "$INPUT_FILE")"
+
+    encode_video "$INPUT_FILE" "$OUTPUT_FILE"
+
+done
+
+echo
+echo "=========================================="
+echo "Todas as conversões finalizaram."
+echo "=========================================="
