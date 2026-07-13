@@ -257,4 +257,4 @@ MIT License
 
 ---
 
-Copyright © 2026 TopLeo
+Copyright © 2026 TopLeo - Paulo Rodeo info@paulo.rodeo
