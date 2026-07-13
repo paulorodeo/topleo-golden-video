@@ -12,7 +12,7 @@ Encode Once. Use Everywhere.
 
 # TopLeo Golden Video
 
-Professional Video Normalization Toolkit
+Professional Video Normalization Toolkit powered by HandBrakeCLI and reproducible encoding profiles.
 
 TopLeo Golden Video is an open-source toolkit for deterministic video normalization.
 
@@ -85,6 +85,39 @@ FFmpeg
       ▼
 HLS / IPTV / Broadcast
 ```
+
+---
+
+
+---
+
+## Quick Start
+
+### Encode videos using the default folders
+
+```bash
+golden-video
+```
+
+Default folders:
+
+```text
+input/
+output/
+```
+
+Place your source videos inside `input/`.
+
+Encoded videos will be written to `output/`.
+
+---
+
+The official encoding profile used is:
+
+```text
+profiles/handbrake/TopLeo-Golden-Video-v1.0.json
+```
+
 
 ---
 
@@ -191,7 +224,8 @@ Current implementation:
 - Project architecture
 - Documentation
 - Official HandBrake Profile
-- Initial encoding scripts
+- Batch video encoding
+- Global command (`golden-video`)
 
 Next milestones:
 
